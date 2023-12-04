@@ -174,48 +174,48 @@ algoritmos_ordenamiento = [
 ]
 
 """ Worst Cases """
-worst_case_times = [[] for _ in algoritmos_ordenamiento]
+##   worst_case_times = [[] for _ in algoritmos_ordenamiento]
+##
+##           #worstcases
+##   for size in array_sizes:
+##       #arr_best = list(range(size))
+##       arr_worst = list(range(size, 0, -1))
+##       i = 0
+##       for algoritmo in algoritmos_ordenamiento:
+##           tiempo = medir_tiempo(algoritmo, arr_worst)
+##           worst_case_times[i].append(tiempo)
+##           i += 1
+##
+##   for i in range(len(worst_case_times)):
+##       plt.plot(array_sizes, worst_case_times[i], label=f'{algoritmos_ordenamiento[i].__name__}')
+##
+##   plt.xlabel('Tamaño del array')
+##   plt.ylabel('Tiempo (segundos)')
+##   plt.title('Algoritmos peor caso')
+##   plt.legend()
+##   plt.show()
+##
 
-        #worstcases
+""" Mejor caso grafica lineal """
+best_case_times = [[] for _ in algoritmos_ordenamiento]
+     #BestCases
 for size in array_sizes:
-    #arr_best = list(range(size))
-    arr_worst = list(range(size, 0, -1))
+    arr_best = list(range(size))
+    #arr_worst = list(range(size, 0, -1))
     i = 0
     for algoritmo in algoritmos_ordenamiento:
-        tiempo = medir_tiempo(algoritmo, arr_worst)
-        worst_case_times[i].append(tiempo)
+        tiempo = medir_tiempo(algoritmo, arr_best)
+        best_case_times[i].append(tiempo)
         i += 1
 
-for i in range(len(worst_case_times)):
-    plt.plot(array_sizes, worst_case_times[i], label=f'{algoritmos_ordenamiento[i].__name__}')
+for i in range(len(best_case_times)):
+    plt.plot(array_sizes, best_case_times[i], label=f'{algoritmos_ordenamiento[i].__name__}')
 
 plt.xlabel('Tamaño del array')
 plt.ylabel('Tiempo (segundos)')
-plt.title('Algoritmos peor caso')
+plt.title('Algoritmos mejor caso')
 plt.legend()
 plt.show()
-
-
-""" Mejor caso grafica lineal """
-## best_case_times = []
-##      #BestCases
-## for size in array_sizes:
-##     arr_best = list(range(size))
-##     #arr_worst = list(range(size, 0, -1))
-##     i = 0
-##     for algoritmo in algoritmos_ordenamiento:
-##         tiempo = medir_tiempo(algoritmo, arr_best)
-##         worst_case_times[i].append(tiempo)
-##         i += 1
-##
-## for i in range(len(worst_case_times)):
-##     plt.plot(array_sizes, worst_case_times[i], label=f'{algoritmos_ordenamiento[i].__name__}')
-##
-## plt.xlabel('Tamaño del array')
-## plt.ylabel('Tiempo (segundos)')
-## plt.title('Algoritmos mejor caso')
-## plt.legend()
-## plt.show()
 
 """Compara cada algoritmo segun 1 array y grafico de barras"""
 
